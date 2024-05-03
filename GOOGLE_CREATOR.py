@@ -11,16 +11,6 @@ import simplekml
 import timeit
 import ImportDF
 
-
-
-
-
-
-
-
-
-
-
 def process():
     script_dir = os.path.abspath(os.path.dirname(sys.argv[0]) or '.')
     zip_directory = os.path.join(script_dir, 'export')
