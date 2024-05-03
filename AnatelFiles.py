@@ -106,5 +106,6 @@ def rename_downloaded_files(ArchiveName):
         os.rename(latest_file_path, custom_filename)
 
 def download(stade, tec_List):
-  while getFilesDate(download_directory) or getFileCount() <= 3:
+  #while getFilesDate(download_directory) or getFileCount() <= 3:
+   while getFilesDate(download_directory) or getFileCount() < 1:
       launchBrowser(stade, tec_List)
