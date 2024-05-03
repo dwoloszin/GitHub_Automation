@@ -57,6 +57,8 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     print('OK')
     logger.info('OK')
+    #AnatelFiles.download('SP',['GSM', 'WCDMA', 'LTE', 'NR'])
+    AnatelFiles.download('SP',['GSM'])
 
  
         
