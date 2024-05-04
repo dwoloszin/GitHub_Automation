@@ -12,6 +12,16 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 
+try:
+    credentials = os.environ["ANATEL_Mosiac"]
+except KeyError:
+    print("Token not available!")
+    credentials = util.getCredentials()
+    #logger.info("Token not available!")
+    #raise
+
+
+
 tec_List = ['GSM', 'WCDMA', 'LTE', 'NR']
 
 script_dir = os.path.abspath(os.path.dirname(sys.argv[0]) or '.')
@@ -72,7 +82,8 @@ def launchBrowser(state, tec_List):
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument('--headless')
         driver = webdriver.Chrome(service=servico, options=chrome_options)
-        driver.get(credentials['ANATEL_Mosiac'])
+        #driver.get(credentials['ANATEL_Mosiac'])
+        driver.get(credentials)
         time.sleep(delayTime)
         driver.find_element('xpath','//*[@id="tblFilter"]/span[5]').click()
         time.sleep(delayTime)

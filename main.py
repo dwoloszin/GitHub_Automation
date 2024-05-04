@@ -37,7 +37,7 @@ logger.addHandler(logger_file_handler)
 
 '''
 try:
-    SOME_SECRET = os.environ["SOME_SECRET"]
+    SOME_SECRET = os.environ["ANATEL_Mosiac"]
 except KeyError:
     SOME_SECRET = "Token not available!"
     #logger.info("Token not available!")
